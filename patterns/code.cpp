@@ -283,12 +283,105 @@ void pattern16(int n){
 // C C C 
 // D D D D 
 // E E E E E
+
+void pattern17(int n){
+    for(int i=0; i<n; i++){
+        int breakpoint=(2*i+1)/2;
+        for(int j=0; j<n-i-1; j++){
+            cout<<' '<<' ';
+        }
+        char ch='A';
+        for(int j=0; j<2*i+1; j++){
+            cout<<ch<<' ';
+            if(j<breakpoint) ch++;
+            else ch--;
+        }
+        for(int j=0; j<n-i-1; j++){
+            cout<<' '<<' ';
+        }
+        cout<<endl;
+    }
+}
+//     A     
+//   A B A   
+// A B C B A 
+
+void pattern18(int n){
+    for(int i=0; i<n; i++){
+        for(char ch='E'-i; ch<='E'; ch++){
+            cout<<ch<<' ';
+        }
+        cout<<endl; 
+    }
+}
+// E 
+// D E 
+// C D E 
+// B C D E 
+// A B C D E 
+void extra(int n){
+    for(int i=0; i<n; i++){
+        char ch='A'+n-1;
+        for(int j=0; j<=i; j++){
+            cout << ch << ' ';
+            ch--;
+        }
+        cout << endl;
+    }
+}
+// E 
+// E D 
+// E D C 
+// E D C B 
+// E D C B A 
+void pattern19(int n){
+    int ispace=0;
+    for(int i=0; i<n; i++){
+        // stars
+        for(int j=1; j<=n-i; j++){
+            cout<<'*'<<' ';
+        }
+        // spaces
+        for(int j=0; j<ispace; j++){
+            cout<<' '<<' ';
+        }
+        // stars
+        for(int j=1; j<=n-i; j++){
+            cout<<'*'<<' ';
+        }
+        ispace+=2;
+        cout<<endl;
+    }
+    ispace=2*n-2;
+    for(int i=1; i<=n; i++){
+        // stars
+        for(int j=1; j<=i; j++){
+            cout<<'*'<<' ';
+        }
+        // spaces
+        for(int j=0; j<ispace; j++){
+            cout<<' '<<' ';
+        }
+        // stars
+        for(int j=1; j<=i; j++){
+            cout<<'*'<<' ';
+        }
+        ispace-=2;
+        cout<<endl;
+   }
+}
+// * * * * * * 
+// * *     * * 
+// *         *  
+// *         * 
+// * *     * * 
+// * * * * * * 
 int main(){
     int t;
     cin>>t;
     for(int i=0; i<t;i++){
         int n;
         cin>>n;
-        pattern15(n);
+        pattern19(n);
     }
 }
