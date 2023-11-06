@@ -1,4 +1,5 @@
 #include<iostream>
+#include<deque>
 using namespace std;
 
 // pair function
@@ -75,6 +76,11 @@ void vectorFunction(){
     v.swap(r);
     //clear
     v.clear();
+}
+
+// List oeprations
+void dequeFunction(){
+    deque<int>d(5,6);
 }
 int main(){
     int a,b;
