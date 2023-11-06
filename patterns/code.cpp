@@ -376,12 +376,43 @@ void pattern19(int n){
 // *         * 
 // * *     * * 
 // * * * * * * 
-int main(){
-    int t;
-    cin>>t;
-    for(int i=0; i<t;i++){
-        int n;
-        cin>>n;
-        pattern19(n);
+
+void pattern20(int n){
+    
+}
+
+void pattern21(int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(i==0|| i==n-1 || j==0 || j==n-1){
+                cout<<"*"<<' ';
+            }
+            else cout<<' '<<' ';
+        }
+        cout<<endl;
     }
+}
+
+int minchange(string s){
+        int n=s.size();
+        vector<vector<int> > cnt(2, vector<int>(n+1));
+        for(int i=0; i<n; i++){
+            cnt[0][i+1]=cnt[0][i]+(s[i]=='0');
+            cnt[1][i+1]=cnt[1][i]+(s[i]=='1');
+        }
+        vector<int>dp(n+1, INT_MAX/2);
+        dp[0]= 0;
+        
+        for(int i=2; i<=n; i+=2){
+            for(int j=0; j<i; j++){
+                dp[i]=min(dp[i], dp[j]+cnt[1][i]-cnt[1][j]);
+                dp[i]=min(dp[i], dp[j]+cnt[0][i]-cnt[1][j]);
+            }
+        }
+        return dp[n];
+}
+int main(){
+    string s="1001";
+    cout<<minchange(s)<<endl;
+    return 0;
 }
