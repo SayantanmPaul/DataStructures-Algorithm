@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+// swaping order: 
+// 0 - n-1
+// 0 - n-2
+// 0 - n-3
+// ...
+// 0 - 1
 
 //optimised bubble sort
 void Optimised_Bubble_Sort(vector<int> &arr, int n){
@@ -19,7 +25,7 @@ void Optimised_Bubble_Sort(vector<int> &arr, int n){
     }
 }
 
-///bubble sorting
+///bubble sorting: adjacent swaping [push the max to the last]
 void Bubble_Sort(vector<int> &arr, int n){
     for (int i = n-1; i>= 1; i--){
         for(int j=0; j<=i-1; j++){

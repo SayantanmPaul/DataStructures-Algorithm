@@ -1,7 +1,11 @@
 #include <iostream>
 using namespace std;
 
-//Selection Sort
+//Selection Sort: select minimum value and swap
+
+// swaping b/w 0 - [n-1]
+// swaping b/w 1 - [n-1]
+// ...
 void SelectionSort(vector<int>&arr, int n){
     for(int i=0; i<=n-2; i++){ //can use j<n-1
         int mini=i;
